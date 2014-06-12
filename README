@@ -1,0 +1,41 @@
+Sum
+1) create a repo in github
+2) clone the repo
+3) dev 
+
+Details:
+
+
+$ git clone https://github.com/annie2010/myrepo1                             
+Cloning into 'myrepo1'...
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 3 (delta 0)
+Unpacking objects: 100% (3/3), done.
+
+$ cd myrepo1/
+
+$ ls
+README.md
+
+$ ls -al
+total 12
+drwxr-xr-x 3 ubuntu ubuntu 4096 Jun 12 22:58 .
+drwxrwxr-x 4 ubuntu ubuntu 4096 Jun 12 22:58 ..
+drwxrwxr-x 8 ubuntu ubuntu 4096 Jun 12 22:58 .git
+-rw-rw-r-- 1 ubuntu ubuntu    0 Jun 12 22:58 README.md
+
+$ touch README
+$ git add README
+$ git commit -m "init check in" README
+
+[master fe15db1] init check in
+ 0 files changed
+ create mode 100644 README
+
+$ git push
+
+Username for 'https://github.com': annie2010
+Password for 'https://annie2010@github.com': 
+To https://github.com/annie2010/myrepo1
+   fb5c696..fe15db1  master -> master
+
