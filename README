@@ -3,6 +3,12 @@ Sum
 2) clone the repo
 3) dev 
 
+
+Useful commands:
+
+$ git show-ref
+$ git show 685e13fc1fefc145a76a1ac80c9ab2af082f5049
+
 Details:
 
 
