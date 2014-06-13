@@ -9,6 +9,17 @@ describe('memdb', function(){
 
   // test save
   describe('.save(doc)', function(){  
+    it('shoud save the document', function(done){
+      var tobi = {name: 'Tobi'}
+      memdb.save(tobi, function(){
+        var ret = memdb.first({name:'Tobi'})
+        assert(ret == tobi);
+      })
+      done()
+    }) // it
+  }); // describe save
+
+  describe('.save(doc)', function(){  
     it('shoud save the document', function(){
       var tobi = {name: 'Tobi'}
       var loki = {name: 'Loki'}

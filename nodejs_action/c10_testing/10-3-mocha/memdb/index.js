@@ -1,7 +1,13 @@
 var db = []
 
-exports.save = function(f_entry){
+
+exports.save = function(f_entry, f_cb){
   db.push(f_entry)
+  if (f_cb) {
+    setTimeout(function(){
+      f_cb()
+    },1000)
+  }
 }
 
 exports.clear = function(){
