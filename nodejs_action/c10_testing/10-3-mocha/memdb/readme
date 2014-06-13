@@ -1,0 +1,12 @@
+1) install mocha
+
+[ubuntu@chicago::ip-10-167-6-127:~/myrepo1/myrepo1/nodejs_action/c10_testing/10-3-mocha/memdb]$ npm install mocha
+
+2) run tests via mocha
+
+[ubuntu@chicago::ip-10-167-6-127:~/myrepo1/myrepo1/nodejs_action/c10_testing/10-3-mocha/memdb]$ mocha
+
+
+  1 passing (6ms)
+
+
