@@ -6,11 +6,24 @@ $ npm install vows
 
 [ubuntu@chicago::ip-10-167-6-127:~/myrepo1/myrepo1/nodejs_action/c10_testing/10-1-assert]
 
+2.b.i)
+
 $ ./vows_test.js 
 ===begin vows
 ===begin vows, the first batch
 ===completed vows successfully
 OK » 1 honored (0.004s) 
+
+2.b.ii)
+
+$ test/todo.js 
+OK » 1 honored (0.004s) 
+
+2.b.iii)
+
+$ node_modules/vows/bin/vows test/todo_vows.js 
+OK » 1 honored (0.004s) 
+
 
 1) test via assert
 $ node test.js

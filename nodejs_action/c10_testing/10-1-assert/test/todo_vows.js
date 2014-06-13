@@ -28,7 +28,7 @@ vows.describe('Todo').addBatch({ // a batch
 
   } // context
  
-}).run()
+}).export(module)
 
 console.log("===completed vows successfully")
 
