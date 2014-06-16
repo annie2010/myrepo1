@@ -17,6 +17,30 @@ cb_connected = function(f_socket){
 
 net.createServer(cb_connected).listen(port)
 
+
+// node API
+
+/**
+
+- Stream 
+-
+-- Streams can be either Readable, Writable, or both (Duplex).
+-- All streams are EventEmitters, but they also have other custom methods and properties depending on whether they are 
+---Readable, Writable, or Duplex.
+
+- Net
+-
+-- The net module provides you with an asynchronous network wrapper. It contains methods for creating both servers and clients (called 
+---streams). You can include this module with require('net');
+
+- Buffer
+-
+-- Pure JavaScript is Unicode friendly but not nice to binary data. When dealing with
+---TCP streams or the file system, it's necessary to handle octet streams. Node has several strategies for manipulating, creating, and consuming octet streams.
+-- Raw data is stored in instances of the Buffer class. A Buffer is similar to an array of integers but corresponds to a raw memory allocation outside the V8 heap. A Buffer cannot be resized.
+
+**/
+
 /**
 net.createServer(function(f_socket){
 
