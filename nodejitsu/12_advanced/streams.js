@@ -49,6 +49,20 @@ $ rm -rf o*.txt; ./streams.js annie.txt o1.txt o2.txt
 
 **/
 
+// node API - http://nodejs.org/api/stream.html
+//
+// Class: stream.Readable
+//  Events: readable, data, end, close, error
+//
+// Class: stream.Writable
+//  Events: drain, finish, pipe, unpipe, error
+//
+// Class: stream.Duplex, Examples of Duplex streams include: tcp sockets
+//   http://nodejs.org/api/stream.html#stream_class_stream_duplex
+//   http://nodejs.org/api/net.html#net_class_net_socket
+//
+// Class: stream.Transform, Examples of Transform streams include: zlib streams, crypto streams
+//
 // ref
 // - definition: http://docs.nodejitsu.com/articles/advanced/streams/what-are-streams
 // - read stream, http://docs.nodejitsu.com/articles/advanced/streams/how-to-use-fs-create-read-stream
