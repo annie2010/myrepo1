@@ -1,5 +1,9 @@
 #!/usr/bin/env node
+
 console.log("===start")
+
+process.on('exit', function(f_code){ console.log('\n\nExiting ..', f_code) })
+process.on('uncaughtException', function(f_err){ console.error('got uncaught exception:',f_err.message); process.exit(1) })
 
 var b1 = new Buffer(8)
 console.log("\nb1",b1)
