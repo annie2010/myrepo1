@@ -16,6 +16,20 @@ socket.on('end', function(){
   process.stdin.pause()      // stdin pause
 })
 
+/** node API
+
+-  process module, 
+-
+-- process.argv, An array containing the command line arguments.
+-- process.stdin, A Readable Stream for stdin.
+-- A Writable Stream to stdout.
+
+-  fs module, http://nodejs.org/api/fs.html
+
+-  child_process module
+
+**/
+
 /** run time
 
 1) First example
