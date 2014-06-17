@@ -32,6 +32,16 @@ http.createServer(ep).listen(port)
 
 console.log("==completed successfully")
 
+/** sample runtime
+
+// server
+$ killall node
+$ ./writable.js 2>&1 | tee /tmp/2.txt
+
+// client
+in browser, http://184.169.223.116:8080
+
+**/
 // recap
 //
 // protocol: HTTP
