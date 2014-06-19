@@ -17,9 +17,53 @@ console.trace(result);
 console.log("=====completed successfully");
 
 /** notes
-// runtime
 
-$ ./02_console.js
+/////////////////////////////
+// ref: http://nodejs.org/api/debugger.html 
+// debug
+/////////////////////////////
+
+$ node debug console_trace.js 
+
+< debugger listening on port 5858
+connecting... ok
+
+debug> watch("f_a")
+debug> watch("c")
+debug> sb(9)
+
+debug> c
+debug> n
+< Trace: 3
+<     at add (/home/ubuntu/myrepo1/myrepo1/nodejs_action/c_b_debug/console_trace.js:10:11)
+<     at Object.<anonymous> (/home/ubuntu/myrepo1/myrepo1/nodejs_action/c_b_debug/console_trace.js:14:10)
+<     at Module._compile (module.js:456:26)
+<     at Object.Module._extensions..js (module.js:474:10)
+<     at Module.load (module.js:356:32)
+<     at Function.Module._load (module.js:312:12)
+<     at Module.runMain [as _onTimeout] (module.js:497:10)
+<     at Timer.listOnTimeout [as ontimeout] (timers.js:110:15)
+break in console_trace.js:11
+Watchers:
+  0: f_a = 1
+  1: c = 3
+
+* 9   var c = f_a + f_b;
+ 10   console.trace(c);
+ 11   return c;
+ 12 };
+ 13 
+
+debug> help
+debug> run
+debug> version
+debug> watchers
+
+////////////////////////////////
+// runtime
+/////////////////////////////
+
+$ ./console_trace.js
 
 =====begin
 Trace: 3
@@ -48,6 +92,6 @@ Exiting .. 0
 $ npm install jshint
 
 // run jshint
-$ jshint 02_console.js
+$ jshint console_trace.js
 **/
 
