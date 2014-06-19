@@ -17,10 +17,16 @@ console.trace(result);
 console.log("=====completed successfully");
 
 /** notes
+/////////////////////////////
+// ref: http://nodejs.org/api/debugger.html 
+// B.4 debugger via WebKit browser and node-inspector 
+/////////////////////////////
+// prep
+$ $sudo npm install -g node-inspector
 
 /////////////////////////////
 // ref: http://nodejs.org/api/debugger.html 
-// debug
+// B.3 node built-in debugger
 /////////////////////////////
 
 $ node debug console_trace.js 
@@ -60,7 +66,7 @@ debug> version
 debug> watchers
 
 ////////////////////////////////
-// runtime
+// B.2 runtime - console.trace()
 /////////////////////////////
 
 $ ./console_trace.js
@@ -88,6 +94,9 @@ Trace: 3
 =====completed successfully
 Exiting .. 0
 
+////////////////////////////////
+// B.1 jshint - syntax check
+/////////////////////////////
 // prep
 $ npm install jshint
 
