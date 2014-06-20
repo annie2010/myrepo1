@@ -1,0 +1,66 @@
+1) readme
+
+1.a) rabbitmq
+https://www.rabbitmq.com/tutorials/tutorial-five-python.html
+
+
+1.b) rabbitmq-python binding
+https://pypi.python.org/pypi/pika
+https://pika.readthedocs.org/en/0.9.13/
+https://pika.readthedocs.org/en/0.9.13/intro.html
+
+2) dependencies
+$ sudo apt-get install python-pip
+$ pip install pika
+
+3) restart and reset rabbitmq
+$ sudo ./reset.sh
+$ ./list.sh
+
+3.B) demo run time - w routing key in pubsub
+
+3.a) sub via routing-key based queue
+
+$./c1.py "1001"
+ [*] Waiting for logs. To exit press CTRL+C
+ [x] '1001':'Hello Annie'
+ [x] '1001':'Hello Annie'
+
+3.b) inspect rabbitmq
+
+Listing exchanges ...
+        direct
+topic_logs      topic
+
+Listing bindings ...
+        exchange        amq.gen-SUr-smMI8pPcx32IDaarrg  queue   amq.gen-SUr-smMI8pPcx32IDaarrg  []
+topic_logs      exchange        amq.gen-SUr-smMI8pPcx32IDaarrg  queue   1001    []
+
+Listing queues ...
+amq.gen-SUr-smMI8pPcx32IDaarrg  0
+
+
+3.c) pub via topic-exchange
+$ ./p1.py 1001 'Hello Annie'
+ [x] Sent '1001':'Hello Annie'
+
+$ ./p1.py 1002 'Hello Annie'
+ [x] Sent '1002':'Hello Annie'
+
+$ ./p1.py 1001 'Hello Annie'
+ [x] Sent '1001':'Hello Annie'
+
+
+3.A) demo run time - wo routing key in pubsub
+
+3.a) first, run consumer
+$ ./c1.py "#"
+ [*] Waiting for logs. To exit press CTRL+C
+ [x] 'anonymous.info':'Hello World!'
+ [x] 'anonymous.info':'Hello World!'
+ [x] 'anonymous.info':'Hello World!'
+
+3.b) then run, publisher
+$ ./p1.py
+No handlers could be found for logger "pika.callback"
+ [x] Sent 'anonymous.info':'Hello World!'
