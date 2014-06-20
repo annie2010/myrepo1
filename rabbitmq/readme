@@ -1,0 +1,28 @@
+Sum:
+
+- rabbitmq concepts: publish, exchanges, queues, subscrib
+- rabbitmq management, add vhost and user, list exchanges and queues
+- simple pubsub with default exchange
+- fancy pubsub with direct-based, topic-based exchange
+
+Details:
+
+1.a) rabbitmq concepts
+http://www.rabbitmq.com/tutorials/amqp-concepts.html
+amqp: advanced messaging queue protocol
+
+1.b) rabbitmq management commands
+http://www.rabbitmq.com/man/rabbitmqctl.1.man.html
+$ sudo rabbitmqctl list_connections -p vhost
+$ sudo rabbitmqctl list_exchanges -p vhost
+$ sudo rabbitmqctl list_queues -p vhost
+$ sudo rabbitmqctl list_bindings -p vhost
+$ sudo rabbitmqctl list_users -p vhost
+$ sudo rabbitmqctl list_vhosts -p vhost
+
+2.a) simple pubsub with default exchange
+http://www.cloudamqp.com/docs/nodejs.html
+
+2.b) a pubsub with direct-based or topic-based exchange
+https://github.com/postwait/node-amqp
+
