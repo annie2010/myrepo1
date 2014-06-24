@@ -66,7 +66,8 @@ EXIT <1>
 // ref
 //
 // nodejitsu
-// http://docs.nodejitsu.com/articles/getting-started/control-flow/how-to-write-asynchronous-code
+// flow control, async api,  http://docs.nodejitsu.com/articles/getting-started/control-flow/how-to-write-asynchronous-code
 //
 // node api
-// http://nodejs.org/api/process.html#process_event_exit
+// fs -  http://nodejs.org/api/fs.html#fs_fs_readfile_filename_options_callback
+// process - http://nodejs.org/api/process.html#process_event_exit
