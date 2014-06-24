@@ -79,5 +79,6 @@ EXIT <0>
  
 - node api
 -- setTimeout(), http://nodejs.org/api/timers.html#timers_settimeout_callback_delay_arg
+-- process.argv(), http://nodejs.org/api/process.html#process_process_argv
 
 **/
