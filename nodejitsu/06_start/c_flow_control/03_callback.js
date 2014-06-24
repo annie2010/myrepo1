@@ -63,5 +63,25 @@ EXIT <0>
 
 **/
 
+/**
 // ref
 // callbacks - http://docs.nodejitsu.com/articles/getting-started/control-flow/what-are-callbacks
+
+The typical convention with asynchronous functions (which almost all of your functions should be):
+
+// named-callback function 
+function asyncOperation ( a, b, c, callback ) {
+  // ... lots of hard work ...
+  if ( // an error occurs // ) {
+    return callback(new Error("An error has occured")); <-------
+  }
+  // ... more work ...
+  callback(null, d, e, f); <-------
+}
+
+// anonymous-callback function
+asyncOperation ( params.., function ( err, returnValues.. ) {
+   //This code gets run after the async operation gets run
+});
+
+**/
