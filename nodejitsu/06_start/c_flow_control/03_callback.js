@@ -67,6 +67,21 @@ EXIT <0>
 // ref
 // callbacks - http://docs.nodejitsu.com/articles/getting-started/control-flow/what-are-callbacks
 
+// step 1: define asyn function signature (parameters, callback)
+// step 2: define calback function signature (err, data)
+// step 3: implement async function
+// step 4: implement callback function
+
+done = function(err, data){
+}
+
+async_call = function(parameters, done){
+  // a lot of work
+  if (err)
+    done(new Error("an error occurred"))
+  done(null, data)
+}
+
 The typical convention with asynchronous functions (which almost all of your functions should be):
 
 // named-callback function 
