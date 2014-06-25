@@ -6,18 +6,42 @@ process.on('uncaughtException',function(err){console.log('EXIT uncaughtException
 console.log("====begin")
 
 http=require('http')
+//profiler=require('v8-profiler')
 port=3000
 
+x=0
 conn = function(req, res){
+ x += 1
+
+ //snapshot=profiler.takeSnapshot('request ' + x);
+ //console.log("snapshot profile : request <%d> ",x)
+ //console.log(snapshot)
+ 
+ profiler.startProfiling('request ' + x) 
+
+ console.time('request ' + x) 
  console.log("connected method <%s> url <%s>", req.method, req.url)
  res.writeHead(200, {'Content-Type':'text/plain'})
  res.end('Hello World');
+ console.timeEnd('request ' + x) 
+
+ //cpu=profiler.stopProfiling('request ' + x) 
+ //console.log("cpu profile : request <%d>",x)
+ //console.log(cpu)
 }
 
 http.createServer(conn).listen(port)
 console.log("HTTP server runs on port <%s>",port)
 
 console.log("====completed successfully")
+
+
+/** profile
+in webkit browser, with node-inspector
+
+chrome browser, dev view, profiles tab
+ref: https://www.npmjs.org/package/v8-profiler
+**/
 
 /** debug
 
@@ -110,5 +134,25 @@ Hello World
 - node api
 -- http request, incoming msg: http://nodejs.org/api/http.html#http_http_incomingmessage
 
+- webkit browser
+-- http://blogs.adobe.com/cantrell/archives/2012/01/a-summary-of-the-webkit-developer-tools.html
 **/
 
+
+/** v8 profile
+
+- ref
+-- instruction http://v8.googlecode.com/svn/branches/bleeding_edge/tools/profviz/profviz.html
+
+Instructions
+
+1) Run V8 with --prof --log-timer-events, or alternatively,
+2) Chrome with --no-sandbox --js-flags="--prof --log-timer-events" to produce v8.log.
+3) Open v8.log on this page. Don't worry, it won't be uploaded anywhere.
+4) Click "Start" to start number crunching. This will take a while.
+Click "Show plot/profile" to switch between the statistical profile and the timeline plot.
+C++ items are missing in the statistical profile because symbol information is not available.
+Consider using the command-line utility instead.
+
+
+**/
