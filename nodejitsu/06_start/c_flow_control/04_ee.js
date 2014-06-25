@@ -39,6 +39,11 @@ EXIT <0>
 
 **/
 
+/** notes
+- events
+- event emitters, operations: register to listen events and emit events w/wo messages
+**/
+
 /** ref
 - node api
 -- events, http://nodejs.org/api/events.html
