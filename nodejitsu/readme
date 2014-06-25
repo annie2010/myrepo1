@@ -1,1 +1,14 @@
 http://docs.nodejitsu.com/articles
+
+
+- advanced topic on streams
+- getting start: console and process, flow control and callback style
+- streams: http server/client and fs
+
+1) node-inspector for interactive debugging
+
+2) console.time() to measure cpu time
+
+3) process.memeoryUsage() to measure memeory consumption
+
+4) console.dir() and util.inspect() to dump module, function, object info
