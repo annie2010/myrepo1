@@ -17,7 +17,7 @@ conn = function(req, res){
  //console.log("snapshot profile : request <%d> ",x)
  //console.log(snapshot)
  
- profiler.startProfiling('request ' + x) 
+ //profiler.startProfiling('request ' + x) 
 
  console.time('request ' + x) 
  console.log("connected method <%s> url <%s>", req.method, req.url)
