@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 generateUUID = function (){
     var d = new Date().getTime();
     var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
